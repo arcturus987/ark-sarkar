@@ -91,12 +91,21 @@ nav ul li a:hover::before {
 }
 
 .main-text {
-  top: 40vh;
+  top: 30vh; /* Adjusted from 40vh to give more space for content */
   left: calc(var(--spacing)*2);
+  right: calc(var(--spacing)*2); /* Added to ensure content doesn't overflow horizontally */
   margin-right: calc(var(--spacing)*2);
   font-family: Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 24px; /* Reduced from 30px for better readability of longer text */
   position: fixed;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: 60vh; /* Limit height to prevent overlapping with header/footer */
+  line-height: 1.5; /* Improve readability for longer text */
+}
+
+.main-text .text-original {
+  display: block;
+  margin-bottom: 20px; /* Add space between paragraphs */
 }
 
 .main-text .text-original,
