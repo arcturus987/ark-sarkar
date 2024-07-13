@@ -90,31 +90,31 @@ nav ul li a:hover::before {
   transform: scaleX(1);
 }
 
-.main-text {
-  top: 30vh; /* Adjusted from 40vh to give more space for content */
+.paragraph-text {
+  top: 30vh;
   left: calc(var(--spacing)*2);
-  right: calc(var(--spacing)*2); /* Added to ensure content doesn't overflow horizontally */
-  margin-right: calc(var(--spacing)*2);
+  right: calc(var(--spacing)*2);
+  /* margin-right: calc(var(--spacing)*2); */
   font-family: Helvetica, sans-serif;
-  font-size: 24px; /* Reduced from 30px for better readability of longer text */
+  font-size: 24px;
   position: fixed;
-  overflow-y: auto; /* Allow scrolling if content overflows */
-  max-height: 60vh; /* Limit height to prevent overlapping with header/footer */
-  line-height: 1.5; /* Improve readability for longer text */
+  overflow-y: auto;
+  max-height: 60vh;
+  line-height: 1.5;
 }
 
-.main-text .text-original {
+.paragraph-text .text-original {
   display: block;
   margin-bottom: 20px; /* Add space between paragraphs */
 }
 
-.main-text .text-original,
-.main-text .text-hover {
+.paragraph-text .text-original,
+.paragraph-text .text-hover {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
-.main-text .text-hover {
+.paragraph-text .text-hover {
   display: none;
 }
 
