@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Aeonik";
+  src: url("../fonts/Aeonik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Black";
+  src: url("../fonts/Aeonik-Bold.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Light";
+  src: url("../fonts/Aeonik-Light.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
 html {
   line-height: 1;
 }
@@ -8,7 +29,7 @@ body {
   padding: 0;
   display: flex;
   cursor: none;
-  background: #F5EEE6;
+  background: #fff5f5;
 }
 
 * {
@@ -33,38 +54,40 @@ body {
 .SiteHeader {
   display: flex;
   justify-content: space-between;
-  position: fixed;
   align-items: center;
+  position: fixed;
   top: calc(var(--spacing));
-  left: calc(var(--spacing)*2);
-  right: calc(var(--spacing)*2);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
 .logo {
-  font-family: Helvetica, sans-serif;
+  font-family: Aeonik Black;
   font-size: 40px;
-  font-weight: bold;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
-  justify-content: flex-end;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-  margin-left: 100px;
-  position: relative;
+  margin-left: calc(var(--spacing));
 }
 
 nav ul li a {
+  font-family: Aeonik;
   text-decoration: none;
-  font-family: Helvetica, sans-serif;
   font-size: 30px;
   position: relative;
   display: inline-block;
@@ -91,15 +114,15 @@ nav ul li a:hover::before {
 }
 
 .paragraph-text {
-  top: 20vh;
-  left: calc(var(--spacing)*2);
-  right: calc(var(--spacing)*2);
-  font-family: Helvetica, sans-serif;
-  font-size: 24px;
   position: fixed;
-  overflow-y: auto;
-  max-height: 60vh;
-  line-height: 1.5;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  font-family: 'Aeonik';
+  font-size: 30px;
+  box-sizing: border-box;
 }
 
 .paragraph-text .text-original {
@@ -120,7 +143,7 @@ nav ul li a:hover::before {
 
 .copyright {
   position: fixed;
-  font-family: Helvetica, sans-serif;
+  font-family: Aeonik;
   font-size: 20px;
   font-weight: normal;
   bottom: 0;
@@ -138,6 +161,141 @@ nav ul li a,
   z-index: 1;
 }
 
+/* Mobile Nav Bar */
+navmob {
+  display: none;
+}
+
+#menu .link {
+  text-decoration: none;
+  color: #000;
+  opacity:1;
+  font-family: Aeonik;
+  font-size: 30px;
+  transition: 200ms;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #000;
+  bottom: -2px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .05s ease-in;
+  transition: transform .2s ease-out;
+}
+
+.link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.menu-list {
+  list-style-type: none;
+  text-align: right;
+}
+
+.menu-logo {
+  color: #000;
+  font-family: Aeonik;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}
+
+.menu-text {
+  color: #000;
+  font-family: Aeonik;
+  font-size: 10px;
+}
+
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  opacity: 0;
+  z-index: 3;
+}
+
+#menuToggle svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+
+.line, .line-top-bottom {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+#menuToggle input:checked ~ svg .line,
+#menuToggle input:checked ~ svg .line-top-bottom {
+  stroke: black;
+}
+
+#menuToggle input:checked ~ svg {
+  transform: rotate(-45deg);
+}
+
+#menuToggle input:checked ~ svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+#menu
+{
+  position: absolute;
+  width: auto;
+  height: fit-content;
+  margin: 180px 0px 0 0px;
+  padding-right: 0px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transform-origin: 0% 0%;
+  transform: translateX(400%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  border: 2px solid #000;
+}
+
+.menu-item
+{
+  padding: 10px 10px;
+  transition-delay: 2s;
+}
+
+#menuToggle input:checked ~ .menu-list
+{
+  transform: none;
+  z-index: 1;
+}
+
+/* Custom Cursor Styles */
 .custom-cursor-container {
   cursor: none;
   position: absolute;
@@ -148,9 +306,10 @@ nav ul li a,
   z-index: 100;
   mix-blend-mode: exclusion;
   pointer-events: none;
+  font-family: Aeonik;
 }
 
-.custom-cursor-container .cursor {
+.cursor {
   position: fixed;
   transform: translate(-50%, -50%);
   height: 20px;
@@ -160,7 +319,7 @@ nav ul li a,
   border: 2px solid #fff;
 }
 
-.custom-cursor-container .cursor-hover {
+.cursor-hover {
   position: fixed;
   height: 20px;
   width: 20px;
@@ -169,9 +328,8 @@ nav ul li a,
   pointer-events: none;
 }
 
-.custom-cursor-container .click-me {
+.click-me {
   font-size: 15px;
-  font-family: Helvetica, sans-serif;
   font-weight: normal;
   color: #fff;
   position: fixed;
@@ -179,7 +337,6 @@ nav ul li a,
   pointer-events: none;
   display: none;
 }
-
 
 /* Link Cursor hover effect */
 .custom-cursor-container .cursor.hover {
@@ -189,16 +346,6 @@ nav ul li a,
 .custom-cursor-container:not(:hover) .cursor,
 .custom-cursor-container:not(:hover) .cursor-hover {
   pointer-events: none;
-}
-
-nav ul li:hover ~ .custom-cursor-container,
-nav ul li a:hover ~ .custom-cursor-container {
-  display: none;
-}
-
-nav ul li:hover,
-nav ul li a:hover {
-  cursor: pointer;
 }
 
 @media (max-width: 1100px) and (min-width: 768px) {
@@ -221,8 +368,16 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  navmob {
+    display: flex;
+  }
+  
   .copyright {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .custom-cursor-container {
