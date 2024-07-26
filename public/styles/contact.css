@@ -37,6 +37,7 @@ body {
   --spacing: max(20px, 4vmin);
 }
 
+
 .frame {
   box-sizing: border-box;
   position: absolute;
@@ -58,7 +59,7 @@ body {
   top: calc(var(--spacing));
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 2 * var(--spacing)*2);  max-width: 1000px;
+  width: calc(100% - 2 * var(--spacing)*2); max-width: 1000px;
   box-sizing: border-box;
 }
 
@@ -116,162 +117,12 @@ nav ul li a:hover::before {
   transform: scaleX(1);
 }
 
-.main-text {
-  position: fixed;
-  top: 50vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 2 * var(--spacing)*2);  
-  max-width: 1000px;
-  font-family: 'Aeonik Light', sans-serif;
-  font-size: 40px;
-  box-sizing: border-box;
-}
-
-.main-text .text-original,
-.main-text .text-hover {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.main-text .text-hover {
-  display: none;
-}
-
-.candid-text {
-  position: fixed;
-  top: 50vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 2 * var(--spacing)*2);
-  max-width: 1000px;
-  font-family: 'Aeonik Light', sans-serif;
-  font-size: 40px;
-  box-sizing: border-box;
-}
-
-.hidden {
-  display: none;
-}
-
-.copyright {
-  position: fixed;
-  font-family: Aeonik;
-  font-size: 20px;
-  font-weight: normal;
-  bottom: 0;
-  left: 0;
-  margin: calc(var(--spacing)/4) calc(var(--spacing));
-  white-space: nowrap;
-}
-
+/* Element Positioning */
 .SiteHeader,
 nav ul li a,
 .main-text,
 .copyright {
   z-index: 1;
-}
-
-.clear {
-  clear: both;
-}
-
-.serious-checkbox {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: calc(var(--spacing) * 2);
-  left: calc(50% - (1000px / 2));
-  font-family: Aeonik;
-}
-
-.checkBox {
-  cursor: pointer;
-  width: 15px;
-  height: 15px;
-  border: 5px solid rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 0px 0px 3px #000;
-  margin-right: 10px;
-}
-
-.checkboxLabel {
-  cursor: pointer;
-  font-size: 30px;
-  color: #000;
-}
-
-.checkBox div {
-  width: 30px;
-  height: 30px;
-  background-color: #000;
-  top: -52px;
-  left: -52px;
-  position: absolute;
-  transform: rotateZ(45deg);
-  z-index: 1;
-}
-
-.checkBox input[type=checkbox]:checked + div {
-  left: -10px;
-  top: -10px;
-}
-
-.checkBox input[type=checkbox] {
-  position: absolute;
-  left: 50px;
-  visibility: hidden;
-}
-
-.transition {
-  transition: 300ms ease;
-}
-
-.loading {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #fff5f5;
-  z-index: 5;
-  animation: fadeOut 1s ease-in-out forwards;
-  animation-delay: 1.2s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Aeonik;
-  font-size: 50px;
-}
-
-p {
-  margin: 0;
-  opacity: 1;
-}
-
-.loading .fade-out-word {
-  opacity: 1;
-  animation: fadeOut 0.5s ease-in-out forwards;
-}
-
-.loading .word1 {
-  animation-delay: 0.5s;
-}
-
-.loading .word2 {
-  animation-delay: 0.7s;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
 }
 
 /* Mobile Nav Bar */
@@ -282,7 +133,8 @@ navmob {
 #menu .link {
   text-decoration: none;
   color: #000;
-  opacity: 1;
+  opacity:1;
+  font-family: Aeonik;
   font-size: 30px;
   transition: 200ms;
 }
@@ -306,10 +158,25 @@ navmob {
   transform-origin: left;
   transform: scaleX(1);
 }
-
 .menu-list {
   list-style-type: none;
   text-align: right;
+}
+
+.menu-logo {
+  color: #000;
+  font-family: Aeonik;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}
+
+.menu-text {
+  color: #000;
+  font-family: Aeonik;
+  font-size: 10px;
 }
 
 #menuToggle {
@@ -321,12 +188,12 @@ navmob {
   user-select: none;
 }
 
-#menuToggle input {
+#menuToggle input
+{
   display: flex;
   width: 40px;
   height: 32px;
   position: absolute;
-  cursor: pointer;
   opacity: 0;
   z-index: 3;
 }
@@ -336,6 +203,7 @@ navmob {
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
 }
+
 
 .line, .line-top-bottom {
   fill: none;
@@ -364,7 +232,8 @@ navmob {
   stroke-dashoffset: -32.42;
 }
 
-#menu {
+#menu
+{
   position: absolute;
   width: auto;
   height: fit-content;
@@ -378,14 +247,14 @@ navmob {
   border: 2px solid #000;
 }
 
-.menu-item {
-  font-family: Aeonik;
-  font-size: 10px;
+.menu-item
+{
   padding: 10px 10px;
   transition-delay: 2s;
 }
 
-#menuToggle input:checked ~ .menu-list {
+#menuToggle input:checked ~ .menu-list
+{
   transform: none;
   z-index: 1;
 }
@@ -443,13 +312,114 @@ navmob {
   pointer-events: none;
 }
 
-/* Hide custom cursor when hovering over logo */
-.logo:hover ~ .custom-cursor-container,
-.logo:hover ~ .custom-cursor-container .cursor {
-  display: none;
+.main-text {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--spacing)*2);  max-width: 1000px;
+  height: 70vh;
+  min-height: 20vh;
+  font-family: 'Aeonik';
+  font-size: 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.main-text .text-original {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.main-text .text-original:first-child {
+  font-size: 50px;
+}
+
+.candid-text {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--spacing)*2);  
+  max-width: 1000px;
+  height: 70vh;
+  font-family: 'Aeonik';
+  font-size: 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.candid-text .text-original {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.serious-checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: calc(var(--spacing) * 2);
+  left: calc(50% - (1000px / 2));
+  font-family: Aeonik;
+}
+
+.checkBox {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border: 5px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 3px #000;
+  margin-right: 10px;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  font-size: 30px;
+  color: #000;
+}
+
+.checkBox div {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 1;
+}
+
+.checkBox input[type=checkbox]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type=checkbox] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.copyright {
+  position: fixed;
+  font-family: Aeonik;
+  font-size: 20px;
+  font-weight: normal;
+  bottom: 0;
+  left: 0;
+  margin: calc(var(--spacing)/4) calc(var(--spacing));
+  white-space: nowrap;
 }
 
 @media (max-width: 1100px) and (min-width: 768px) {
+  .copyright {
+    font-size: 18px;
+  }
+
   .custom-cursor-container {
     cursor: none;
   }
@@ -476,6 +446,10 @@ navmob {
   navmob {
     display: flex;
   }
+  
+  .copyright {
+    font-size: 12px;
+  }
 
   .custom-cursor-container {
     cursor: none;
@@ -488,18 +462,6 @@ navmob {
   body,
   * {
     cursor: pointer;
-  }
-
-  .main-text {
-    font-size: 40px;
-  }
-  
-  .candid-text {
-    font-size: 40px;
-  }
-
-  .copyright {
-    font-size: 12px;
   }
 
   .serious-checkbox {

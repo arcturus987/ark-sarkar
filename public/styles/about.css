@@ -59,8 +59,7 @@ body {
   top: calc(var(--spacing));
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 1000px;
+  width: calc(100% - 2 * var(--spacing)*2); max-width: 1000px;
   box-sizing: border-box;
 }
 
@@ -68,6 +67,11 @@ body {
   font-family: Aeonik Black;
   font-size: 40px;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #3a3a3a;
 }
 
 nav {
@@ -112,46 +116,6 @@ nav ul li a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
-
-.paragraph-text {
-  position: fixed;
-  top: 20vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1000px;
-  font-family: 'Aeonik';
-  font-size: 30px;
-  box-sizing: border-box;
-}
-
-.paragraph-text .text-original {
-  display: block;
-  margin-bottom: 20px; /* Add space between paragraphs */
-}
-
-.paragraph-text .text-original,
-.paragraph-text .text-hover {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.paragraph-text .text-hover {
-  display: none;
-}
-
-
-.copyright {
-  position: fixed;
-  font-family: Aeonik;
-  font-size: 20px;
-  font-weight: normal;
-  bottom: 0;
-  left: 0;
-  margin: calc(var(--spacing)/4) calc(var(--spacing));
-  white-space: nowrap;
-}
-
 
 /* Element Positioning */
 .SiteHeader,
@@ -348,6 +312,105 @@ navmob {
   pointer-events: none;
 }
 
+.main-text {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--spacing)*2);  max-width: 1000px;
+  height: 70vh;
+  min-height: 20vh;
+  font-family: 'Aeonik';
+  font-size: 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.main-text .text-original {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.candid-text {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--spacing)*2);  
+  max-width: 1000px;
+  height: 70vh;
+  font-family: 'Aeonik';
+  font-size: 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.candid-text .text-original {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.serious-checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: calc(var(--spacing) * 2);
+  left: calc(50% - (1000px / 2));
+  font-family: Aeonik;
+}
+
+.checkBox {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border: 5px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 3px #000;
+  margin-right: 10px;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  font-size: 30px;
+  color: #000;
+}
+
+.checkBox div {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 1;
+}
+
+.checkBox input[type=checkbox]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type=checkbox] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.copyright {
+  position: fixed;
+  font-family: Aeonik;
+  font-size: 20px;
+  font-weight: normal;
+  bottom: 0;
+  left: 0;
+  margin: calc(var(--spacing)/4) calc(var(--spacing));
+  white-space: nowrap;
+}
+
 @media (max-width: 1100px) and (min-width: 768px) {
   .copyright {
     font-size: 18px;
@@ -365,6 +428,10 @@ navmob {
   * {
     cursor: pointer;
   }
+
+  .serious-checkbox {
+    left: calc(var(--spacing) * 2);
+  }
 }
 
 @media (max-width: 768px) {
@@ -377,7 +444,7 @@ navmob {
   }
   
   .copyright {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .custom-cursor-container {
@@ -391,5 +458,9 @@ navmob {
   body,
   * {
     cursor: pointer;
+  }
+
+  .serious-checkbox {
+    left: calc(var(--spacing) * 2);
   }
 }

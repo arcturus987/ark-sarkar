@@ -5,18 +5,17 @@
   <link rel="icon" href="./assets/Ark Logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Ark</title>
-  <link href="https://fonts.cdnfonts.com/css/aeonik" rel="stylesheet">
   <link rel="stylesheet" href="./styles/about.css">
 </head>
 <body>
   <div class="content">
     <header class="SiteHeader">
-      <h1 class="logo">ARK SARKAR</h1>
+      <a href="index.html" style="text-decoration: none;">
+        <h1 class="logo">ARK SARKAR</h1>
+      </a>
       <nav>
         <ul>
-          <li class="nav-list-item"><a href="index.html">Home</a></li>
-          <!-- <li class="nav-list-item"><a href="#">Blog</a></li> -->
-          <li class="nav-list-item"><a href="#">Contact</a></li>
+          <li class="nav-list-item"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -39,12 +38,29 @@
 
     <div class="frame"></div>
 
-    <div class="paragraph-text">
+    <div class="main-text">
       <span class="text-original">Hello there! I'm Ark.</span>
+      <br>
+      <span class="text-original">I'm pursuing an undergraduate Computer Science degree at Arizona State University, with minors in Psychology and Business – a blend that reflects my fascination with technology, human behavior, and entrepreneurship</span>
+      <br>
+      <span class="text-original">Outside of academics, I run 
+        <a href="https://arcturusaudio.pro"><u>Arcturus Audio</u></a>, an audio engineering service that allows me to merge my technical expertise with my creative side. When I'm not working on that, you'll often find me lost in books on philosophy and psychology, always striving to deepen my understanding of the world.</span>
+      <br>
+      <span class="text-original">I'm actively seeking opportunities in Product Management, Front End Development, or Academic Research. Each of these fields excites me, and I'm eager to apply my skills where they can make a real difference.</span>
+      <br>
+      <span class="text-original">I'm driven by curiosity and a desire to learn, and I'm looking forward to connecting with like-minded individuals and organizations. Let's explore how we can collaborate and grow together!</span>
+    </div>
+
+    <div class="candid-text">
+      <span class="text-original">Howdy! I'm Aritra but I go by Ark.</span>
+      <br>
       <span class="text-original">I'm an undergrad studying Computer Science, but with a twist—I'm also diving into Psychology and Business. Growing up alongside radical technologies, I couldn't help but notice how they were catalyzing the way we think and act. It got me curious about what makes people tick in this digital world.</span>
- 
+      <br>
       <span class="text-original">I often find myself deeply affected by the world around me. It's not always easy, but it's led me to seek a deeper understanding of our shared human experience. Through philosophy, I'm learning to navigate the complexities of life, including the inevitable challenges we all face. It's a bittersweet journey—sometimes intense, but always enlightening. In a way, my unique perspective has become both my greatest challenge and my greatest teacher.</span>
     </div>
+
+    <!-- Checkbox Text Changer -->
+    <script src="js/aboutme-text-changer.js"></script>
     
   </div>
 
@@ -52,11 +68,20 @@
     <span>© 2024</span>
   </div>
 
+  <div class="serious-checkbox">
+    <label class="checkBox">
+      <input id="ch1" type="checkbox" checked>
+      <div class="transition"></div>
+    </label>
+    <label for="ch1" class="checkboxLabel">
+      <span class="text">Serious</span>
+    </label>
+  </div>
+
 
   <!--Custom Cursor-->
   <div class="custom-cursor-container">
     <div class="cursor" id="cursor"></div>
-    <div class="click-me" >[ Click Me ]</div>
   </div>
 
   <!--Cursor Script-->
