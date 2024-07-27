@@ -116,7 +116,7 @@ nav ul li a:hover::before {
   transform: scaleX(1);
 }
 
-.main-text {
+.main-text, .candid-text {
   position: fixed;
   top: 50vh;
   left: 50%;
@@ -138,18 +138,6 @@ nav ul li a:hover::before {
   display: none;
 }
 
-.candid-text {
-  position: fixed;
-  top: 50vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 2 * var(--spacing)*2);
-  max-width: 1000px;
-  font-family: 'Aeonik Light', sans-serif;
-  font-size: 40px;
-  box-sizing: border-box;
-}
-
 .hidden {
   display: none;
 }
@@ -167,7 +155,6 @@ nav ul li a:hover::before {
 
 .SiteHeader,
 nav ul li a,
-.main-text,
 .copyright {
   z-index: 1;
 }
@@ -450,6 +437,10 @@ navmob {
 }
 
 @media (max-width: 1100px) and (min-width: 768px) {
+  .main-text, .candid-text {
+    font-size: 10px;
+  }
+  
   .custom-cursor-container {
     cursor: none;
   }
@@ -469,6 +460,10 @@ navmob {
 }
 
 @media (max-width: 768px) {
+  .main-text, .candid-text {
+    font-size: 35px;
+  }
+
   nav {
     display: none;
   }
@@ -488,14 +483,6 @@ navmob {
   body,
   * {
     cursor: pointer;
-  }
-
-  .main-text {
-    font-size: 40px;
-  }
-  
-  .candid-text {
-    font-size: 40px;
   }
 
   .copyright {

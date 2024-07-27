@@ -120,7 +120,6 @@ nav ul li a:hover::before {
 /* Element Positioning */
 .SiteHeader,
 nav ul li a,
-.main-text,
 .copyright {
   z-index: 1;
 }

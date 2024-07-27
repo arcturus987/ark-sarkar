@@ -120,7 +120,6 @@ nav ul li a:hover::before {
 /* Element Positioning */
 .SiteHeader,
 nav ul li a,
-.main-text,
 .copyright {
   z-index: 1;
 }
@@ -312,11 +311,11 @@ navmob {
   pointer-events: none;
 }
 
-.main-text {
+.main-text, .candid-text{
   position: fixed;
-  top: 150px;
+  top: 50vh;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: calc(100% - 2 * var(--spacing)*2);  max-width: 1000px;
   height: 70vh;
   min-height: 20vh;
@@ -324,30 +323,32 @@ navmob {
   font-size: 25px;
   box-sizing: border-box;
   overflow-y: auto;
+  line-height: 2rem;
 }
 
-.main-text .text-original {
+.main-text, .text-original, .candid-text{
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
-.candid-text {
-  position: fixed;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 2 * var(--spacing)*2);  
-  max-width: 1000px;
-  height: 70vh;
-  font-family: 'Aeonik';
-  font-size: 25px;
-  box-sizing: border-box;
-  overflow-y: auto;
+.intro-text-container {
+  position: relative;
+  display: inline-block;
 }
 
-.candid-text .text-original {
-  display: block;
-  margin-bottom: 20px;
+.hover-image {
+  position: absolute;
+  top: 40px;
+  width: 150px; /* Adjust the size as needed */
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.intro-text-container:hover .hover-image {
+  opacity: 1;
 }
 
 .serious-checkbox {
