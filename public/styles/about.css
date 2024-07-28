@@ -311,12 +311,22 @@ navmob {
   pointer-events: none;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .main-text, .candid-text{
   position: fixed;
   top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - 2 * var(--spacing)*2);  max-width: 1000px;
+  width: calc(100% - 2 * var(--spacing)*2);  
+  max-width: 1000px;
   height: 70vh;
   min-height: 20vh;
   font-family: 'Aeonik';
@@ -324,6 +334,8 @@ navmob {
   box-sizing: border-box;
   overflow-y: auto;
   line-height: 2rem;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .main-text, .text-original, .candid-text{
